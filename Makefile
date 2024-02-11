@@ -12,11 +12,17 @@ SRC	=	src/main/main.c	\
 		func/my_put_nbr.c	\
 		func/my_putstr.c	\
 		func/my_strlen.c	\
-		func/my_str_to_word_array.c	\
+		func/str_to_wordarray.c	\
 		func/my_atoi.c	\
 		func/my_strcmp.c	\
 		func/my_memset.c	\
-		src/shell/loop.c
+		func/my_strdup.c	\
+		func/my_revstr.c	\
+		func/my_strncmp.c	\
+		src/shell/loop.c	\
+		src/shell/execute.c	\
+		src/shell/my_getenv.c	\
+		src/shell/read_line.c
 
 OBJ	=	$(SRC:.c=.o)
 

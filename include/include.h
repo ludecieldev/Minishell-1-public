@@ -13,4 +13,8 @@
     #include <stdlib.h>
     #include <unistd.h>
     #include <string.h>
+    #include <sys/types.h>
+    #include <sys/wait.h>
+    #include <signal.h>
+    #include <stdarg.h>
 #endif //B_PSU_200_LIL_2_1_MINISHELL1_ALEXANDRE_GARBE_INCLUDE_H
