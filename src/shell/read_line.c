@@ -9,11 +9,22 @@
 
 #include "../../include/minishell.h"
 
+char *remove_backn(char *str)
+{
+    char *new = malloc(sizeof(char) * my_strlen(str));
+    int i = 0;
+
+    for (; str[i] != '\n'; i++)
+        new[i] = str[i];
+    new[i] = '\0';
+    return (new);
+}
+
 char *read_line(void)
 {
     char *line = NULL;
-    size_t bufsize = 0;
+    size_t bufsize = 1001;
 
     getline(&line, &bufsize, stdin);
-    return (line);
+    return (remove_backn(line));
 }
