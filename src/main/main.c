@@ -15,7 +15,6 @@ int main(int ac, char **av)
 {
     if (ac != 1)
         return 84;
-    if (shell_loop(environ) == 84)
-        return 84;
+    shell_loop(environ);
     return 0;
 }
