@@ -19,6 +19,8 @@ SRC	=	src/main/main.c	\
 		func/my_strdup.c	\
 		func/my_revstr.c	\
 		func/my_strncmp.c	\
+		func/my_arraylen.c	\
+		func/my_strcat.c	\
 		src/shell/loop.c	\
 		src/shell/execute.c	\
 		src/shell/my_getenv.c	\

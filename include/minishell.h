@@ -25,9 +25,12 @@ char **str_to_wordarray(char *str, char separator);
 int my_strncmp(char *s1, char *s2, int n);
 char *my_strdup(char *str);
 char *my_revstr(char *str);
+int my_arraylen(char **array);
+char *my_strcat(char *dest, char *src);
 //SRC
-int shell_loop(char **env);
+void shell_loop(char **env);
 char *read_line(void);
 int execute_check(char **args, char **env);
 char *my_getenv(char *str);
+char **remove_trail(char **array);
 #endif //B_PSU_200_LIL_2_1_MINISHELL1_ALEXANDRE_GARBE_MINISHELL_H
