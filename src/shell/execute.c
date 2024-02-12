@@ -14,8 +14,10 @@ extern char **environ;
 int special_args(char **args, char **env)
 {
     if (my_strcmp(args[0], "env") == 0) {
-        for (int i = 0; env[i] != NULL; i++)
+        for (int i = 0; env[i] != NULL; i++){
             mini_printf(env[i]);
+            mini_printf("\n");
+        }
         return 1;
     }
     if (my_strcmp(args[0], "exit") == 0)
@@ -69,17 +71,18 @@ int execute_bin(char **args)
     pid = fork();
     if (pid == 0) {
         if (cond_shorter(args, environ) == 1)
-            return (1);
+            return (0);
     } else {
         waitpid(pid, &status, 0);
     }
-    return 0;
+    return 1;
 }
 
 int execute_check(char **args, char **env)
 {
     if (args[0] == NULL)
         return 1;
-    special_args(args, env);
+    if (special_args(args, env) == 1)
+        return 1;
     return execute_bin(args);
 }
