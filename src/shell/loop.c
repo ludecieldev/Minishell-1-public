@@ -9,7 +9,8 @@
 
 #include "../../include/minishell.h"
 
-int shell_loop(char **env)
+
+void shell_loop(char **env)
 {
     char *line;
     char **args;
@@ -23,5 +24,4 @@ int shell_loop(char **env)
         free(line);
         free(args);
     }
-    return 0;
 }
