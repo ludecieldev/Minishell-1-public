@@ -48,10 +48,10 @@ static char *find_command(char *command, char **env)
     return NULL;
 }
 
-static cond_shorter(char **args, char **environ)
+static int cond_shorter(char **args, char **environ)
 {
     if (execve(args[0], args, environ) == -1) {
-        args[0] = find_command(args[0], environ);
+        args[0] = find_command(args[0]);
         if (args[0] == NULL) {
             mini_printf("%s: Command not found.\n", args[0]);
             return 1;
@@ -61,6 +61,7 @@ static cond_shorter(char **args, char **environ)
             return 1;
         }
     }
+    return 0;
 }
 
 int execute_bin(char **args)
@@ -78,11 +79,11 @@ int execute_bin(char **args)
     return 1;
 }
 
-int execute_check(char **args, char **env)
+int execute_check(char **args)
 {
     if (args[0] == NULL)
         return 1;
-    if (special_args(args, env) == 1)
+    if (special_args(args) == 1)
         return 1;
     return execute_bin(args);
 }
