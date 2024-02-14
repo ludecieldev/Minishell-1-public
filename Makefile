@@ -21,10 +21,16 @@ SRC	=	src/main/main.c	\
 		func/my_strncmp.c	\
 		func/my_arraylen.c	\
 		func/my_strcat.c	\
+		func/my_strchr.c	\
 		src/shell/loop.c	\
 		src/shell/execute.c	\
 		src/shell/my_getenv.c	\
-		src/shell/read_line.c
+		src/shell/read_line.c	\
+		src/shell/special_args.c	\
+		src/shell/user_prompt.c	\
+		src/shell/cd/arg_cd.c	\
+		src/shell/cd/cd_flag_dash.c	\
+		src/shell/cd/cd_flag_tilde.c
 
 OBJ	=	$(SRC:.c=.o)
 

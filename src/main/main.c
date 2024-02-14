@@ -9,12 +9,8 @@
 
 #include "../../include/minishell.h"
 
-extern char **environ;
-
-int main(int ac, char **av)
+int main(void)
 {
-    if (ac != 1)
-        return 84;
-    shell_loop(environ);
+    shell_loop();
     return 0;
 }

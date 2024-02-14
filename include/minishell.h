@@ -28,9 +28,17 @@ char *my_revstr(char *str);
 int my_arraylen(char **array);
 char *my_strcat(char *dest, char *src);
 //SRC
-void shell_loop(char **env);
+void shell_loop(void);
 char *read_line(void);
-int execute_check(char **args, char **env);
+int execute_check(char **args);
 char *my_getenv(char *str);
 char **remove_trail(char **array);
+int special_args(char **args);
+void user_prompt(void);
+int special_cd(char **args);
+int cd_flag_dash(char **args);
+int cd_flag_tilde(char **args);
+void shell_loop(void);
+//TAB
+
 #endif //B_PSU_200_LIL_2_1_MINISHELL1_ALEXANDRE_GARBE_MINISHELL_H
