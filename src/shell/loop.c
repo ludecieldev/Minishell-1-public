@@ -9,18 +9,19 @@
 
 #include "../../include/minishell.h"
 
+extern char **environ;
 
-void shell_loop(char **env)
+void shell_loop(void)
 {
     char *line;
     char **args;
     int status = 1;
 
     for (int i = 0; status; i++) {
-        mini_printf("Minishell > ");
+        user_prompt();
         line = read_line();
         args = str_to_wordarray(line, ' ');
-        status = execute_check(args, env);
+        status = execute_check(args);
         free(line);
         free(args);
     }
