@@ -11,28 +11,7 @@
 
 extern char **environ;
 
-int special_args(char **args, char **env)
-{
-    if (my_strcmp(args[0], "env") == 0) {
-        for (int i = 0; env[i] != NULL; i++){
-            mini_printf(env[i]);
-            mini_printf("\n");
-        }
-        return 1;
-    }
-    if (my_strcmp(args[0], "exit") == 0)
-        exit(0);
-    if (my_strcmp(args[0], "cd") == 0) {
-        if (args[1] == NULL)
-            chdir(my_getenv("HOME"));
-        else
-            chdir(args[1]);
-        return 1;
-    }
-    return 0;
-}
-
-static char *find_command(char *command, char **env)
+static char *find_command(char *command)
 {
     char *path = my_getenv("PATH");
     char **path_array = str_to_wordarray(path, ':');

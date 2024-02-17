@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2024
 ** B-PSU-200-LIL-2-1-minishell1-alexandre.garbe
 ** File description:
-** arg_cd.c
+** setenv.c
 ** Author:
 ** ludeciel
 */
@@ -11,18 +11,18 @@
 
 extern char **environ;
 
-
-
-int special_cd(char **args)
+int my_setenv(char **args)
 {
-    if (my_strcmp(args[0], "cd") == 0) {
+    if (my_strcmp(args[0], "setenv") == 0) {
         if (args[1] == NULL) {
-            chdir(my_getenv("HOME"));
+            my_env();
             return 1;
         }
-        if (cd_flag_dash(args) == 1 || cd_flag_tilde(args) == 1)
+        if (args[2] == NULL) {
+            setenv(args[1], "", 1);
             return 1;
-        chdir(args[1]);
+        }
+        setenv(args[1], args[2], 1);
         return 1;
     }
     return 0;
