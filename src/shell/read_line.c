@@ -25,6 +25,9 @@ char *read_line(void)
     char *line = NULL;
     size_t bufsize = 1001;
 
-    getline(&line, &bufsize, stdin);
+    if (getline(&line, &bufsize, stdin) == -1) {
+        free(line);
+        return NULL;
+    }
     return (remove_backn(line));
 }
