@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2024
-** B-PSU-200-LIL-2-1-minishell1-alexandre.garbe
+** minishell
 ** File description:
 ** main.c
 ** Author:
@@ -9,8 +9,13 @@
 
 #include "../../include/minishell.h"
 
-int main(void)
+int main(int ac, char **av, char **env)
 {
-    shell_loop();
-    return 0;
+    (void)ac;
+    (void)av;
+    int status = 1;
+    char **envp = my_arraydup(env);
+
+    shell_loop(&envp, &status);
+    return (status);
 }
