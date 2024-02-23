@@ -22,15 +22,30 @@ SRC	=	src/main/main.c	\
 		func/my_arraylen.c	\
 		func/my_strcat.c	\
 		func/my_strchr.c	\
-		src/shell/loop.c	\
-		src/shell/execute.c	\
-		src/shell/my_getenv.c	\
+		func/puterror.c	\
+		func/my_arraydup.c	\
+		func/my_realloc.c	\
+		func/my_realloc_array.c	\
 		src/shell/read_line.c	\
-		src/shell/special_args.c	\
-		src/shell/user_prompt.c	\
-		src/shell/cd/arg_cd.c	\
-		src/shell/cd/cd_flag_dash.c	\
-		src/shell/cd/cd_flag_tilde.c
+		src/shell/shell_loop.c	\
+		src/shell/execute/execute_bin.c	\
+		src/shell/execute/executecheck.c	\
+		src/shell/execute/get_fork_status.c	\
+		src/shell/env/my_getenv.c	\
+		src/shell/env/set_oldpwd.c	\
+		src/shell/env/set_pwd.c	\
+		src/shell/custom_args/cd/cd_checked.c	\
+		src/shell/custom_args/cd/cd_dash.c	\
+		src/shell/custom_args/cd/cd_directory.c	\
+		src/shell/custom_args/cd/cd_no_args.c	\
+		src/shell/custom_args/cd/cd_tilde.c	\
+		src/shell/custom_args/env/env.c	\
+		src/shell/custom_args/exit/exit.c	\
+		src/shell/custom_args/setenv/my_setenv.c	\
+		src/shell/custom_args/setenv/setenv_noarg.c	\
+		src/shell/custom_args/setenv/setenv_twoargs.c	\
+		src/shell/env/get_env_value.c	\
+		src/shell/execute/find_command.c
 
 OBJ	=	$(SRC:.c=.o)
 
