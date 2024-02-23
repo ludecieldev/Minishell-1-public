@@ -11,6 +11,10 @@
     #define B_PSU_200_LIL_2_1_MINISHELL1_ALEXANDRE_GARBE_MINISHELL_H
     #include "include.h"
 //STRUCT
+typedef struct args_s {
+    char *command;
+    void (*func)(char **args, char ***env, int *status);
+}args_t;
 //FUNC
 void *my_memset(void *s, int c, size_t n);
 int mini_printf(char const *format, ...);
@@ -27,18 +31,38 @@ char *my_strdup(char *str);
 char *my_revstr(char *str);
 int my_arraylen(char **array);
 char *my_strcat(char *dest, char *src);
+void puterror(char *str);
+char *my_realloc(char *str, int size);
+char **my_realloc_array(char **array, char *str);
+char **my_arraydup(char **array);
 //SRC
-void shell_loop(void);
 char *read_line(void);
-int execute_check(char **args);
-char *my_getenv(char *str);
-char **remove_trail(char **array);
-int special_args(char **args);
-void user_prompt(void);
-int special_cd(char **args);
-int cd_flag_dash(char **args);
-int cd_flag_tilde(char **args);
-void shell_loop(void);
+char *my_getenv(char *str, char ***env);
+void set_pwd(char ***env, char *pwd);
+void set_oldpwd(char ***env, char *oldpwd);
+void cd_no_args(char **args, char ***env, int *status);
+void cd_tilde(char **args, char ***env, int *status);
+int shell_loop(char ***env, int *status);
+void setenv_no_args(char **args,char ***env, int *status);
+void my_setenv(char **args, char ***env, int *status);
+void setenv_two_args(char **args, char ***env, int *status);
+void cd_dash(char **args, char ***env, int *status);
+void env(char **args, char ***env, int *status);
+void my_exit(char **args, char ***env, int *status);
+int get_fork_status(int status);
+void cd_directory(char **args, char ***env, int *status);
+void check_cd(char **args, char ***env, int *status);
+int execute_bin(char **args, char ***env);
+int executecheck(char **args, char ***env, int *status);
+int get_fork_status(int status);
+char *get_env_value(char *str);
+char *find_command(char *command, char ***env);
 //TAB
+static const args_t specialargs[] = {
+    {"cd", &check_cd},
+    {"env", &env},
+    {"exit", &my_exit},
+    {NULL, NULL}
+};
 
 #endif //B_PSU_200_LIL_2_1_MINISHELL1_ALEXANDRE_GARBE_MINISHELL_H
