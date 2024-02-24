@@ -27,7 +27,6 @@ void set_envonearg(char **args, char ***env, char *new_var)
 
 void my_setenv(char **args, char ***env, int *status)
 {
-    int i = 0;
     char *new_var = NULL;
 
     (void)status;
@@ -36,7 +35,7 @@ void my_setenv(char **args, char ***env, int *status)
         return;
     }
     if (args[2] == NULL) {
-        set_envonearg(args, env, status);
+        set_envonearg(args, env, new_var);
         return;
     }
     if (args[3] != NULL) {
