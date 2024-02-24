@@ -62,6 +62,7 @@ static const args_t specialargs[] = {
     {"cd", &check_cd},
     {"env", &env},
     {"exit", &my_exit},
+    {"setenv", &my_setenv},
     {NULL, NULL}
 };
 

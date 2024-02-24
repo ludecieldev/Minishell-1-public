@@ -11,7 +11,7 @@
 
 int executecheck(char **args, char ***env, int *status)
 {
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 4; i++) {
         if (my_strcmp(args[0], specialargs[i].command) == 0) {
             specialargs[i].func(args, env, status);
             return 1;
