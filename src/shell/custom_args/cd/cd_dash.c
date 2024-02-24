@@ -11,10 +11,10 @@
 
 void cd_dash(char **args, char ***env, int *status)
 {
-    (void)args;
     char *oldpwd = my_getenv("OLDPWD", env);
     char *pwd = my_getenv("PWD", env);
 
+    (void)args;
     if (oldpwd == NULL) {
         puterror("cd: No previous directory.\n");
         *status = 84;

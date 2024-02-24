@@ -16,7 +16,8 @@ int shell_loop(char ***env, int *status)
 
     for (; status != 0;) {
         mini_printf("$> ");
-        if ((line = read_line()) == NULL)
+        line = read_line();
+        if (line == NULL)
             exit(*status);
         args = str_to_wordarray(line, ' ');
         *status = executecheck(args, env, status);

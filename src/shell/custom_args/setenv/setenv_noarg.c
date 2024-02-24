@@ -9,7 +9,7 @@
 
 #include "../../../../include/minishell.h"
 
-void setenv_no_args(char **args,char ***env, int *status)
+void setenv_no_args(char **args, char ***env, int *status)
 {
     (void)status;
     (void)args;

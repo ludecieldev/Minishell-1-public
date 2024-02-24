@@ -11,9 +11,9 @@
 
 void env(char **args, char ***env, int *status)
 {
-    (void)status;
     int i = 0;
 
+    (void)status;
     if (args[1] != NULL) {
         mini_printf("env: '%s': No such file or directory\n", args[1]);
         return;

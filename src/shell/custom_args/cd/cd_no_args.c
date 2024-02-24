@@ -11,10 +11,10 @@
 
 void cd_no_args(char **args, char ***env, int *status)
 {
-    (void)args;
     char *home = my_getenv("HOME", env);
     char *oldpwd = my_getenv("OLDPWD", env);
 
+    (void)args;
     if (home == NULL) {
         puterror("cd: No home directory.\n");
         *status = 84;

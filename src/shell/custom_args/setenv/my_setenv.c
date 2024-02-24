@@ -11,10 +11,10 @@
 
 void my_setenv(char **args, char ***env, int *status)
 {
-    (void)status;
     int i = 0;
     char *new_var = NULL;
 
+    (void)status;
     if (args[1] == NULL) {
         setenv_no_args(args, env, status);
         return;
@@ -32,5 +32,3 @@ void my_setenv(char **args, char ***env, int *status)
     (*env)[i] = my_strcat((*env)[i], args[2]);
     (*env)[i + 1] = NULL;
 }
-
-

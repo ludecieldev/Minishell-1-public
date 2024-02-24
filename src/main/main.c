@@ -11,11 +11,11 @@
 
 int main(int ac, char **av, char **env)
 {
-    (void)ac;
-    (void)av;
     int status = 1;
     char **envp = my_arraydup(env);
 
+    (void)ac;
+    (void)av;
     shell_loop(&envp, &status);
     return (status);
 }
