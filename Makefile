@@ -45,7 +45,9 @@ SRC	=	src/main/main.c	\
 		src/shell/custom_args/setenv/setenv_noarg.c	\
 		src/shell/custom_args/setenv/setenv_twoargs.c	\
 		src/shell/env/get_env_value.c	\
-		src/shell/execute/find_command.c
+		src/shell/execute/find_command.c \
+		src/shell/custom_args/unsetenv/my_unsetenv.c	\
+		src/shell/custom_args/unsetenv/unsetenv_multiple_args.c
 
 OBJ	=	$(SRC:.c=.o)
 

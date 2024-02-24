@@ -9,6 +9,15 @@
 
 #include "../../include/minishell.h"
 
+char *replace_backt(char *str)
+{
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (str[i] == '\t')
+            str[i] = ' ';
+    }
+    return str;
+}
+
 char *remove_backn(char *str)
 {
     char *new = malloc(sizeof(char) * my_strlen(str));
@@ -17,7 +26,7 @@ char *remove_backn(char *str)
     for (; str[i] != '\n'; i++)
         new[i] = str[i];
     new[i] = '\0';
-    return (new);
+    return replace_backt(new);
 }
 
 char *read_line(void)

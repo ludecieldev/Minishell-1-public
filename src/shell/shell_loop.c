@@ -14,7 +14,7 @@ int shell_loop(char ***env, int *status)
     char *line = NULL;
     char **args = NULL;
 
-    for (; status != 0;) {
+    for (; status;) {
         mini_printf("$> ");
         line = read_line();
         if (line == NULL)

@@ -57,12 +57,16 @@ int executecheck(char **args, char ***env, int *status);
 int get_fork_status(int status);
 char *get_env_value(char *str);
 char *find_command(char *command, char ***env);
+void my_unsetenv(char **args, char ***env, int *status);
+void unsetenv_onearg(char **args, char ***env, int *status);
+void unsetenv_multiple_args(char **args, char ***env, int *status);
 //TAB
 static const args_t specialargs[] = {
     {"cd", &check_cd},
     {"env", &env},
     {"exit", &my_exit},
     {"setenv", &my_setenv},
+    {"unsetenv", &my_unsetenv},
     {NULL, NULL}
 };
 

@@ -22,5 +22,5 @@ char *find_command(char *command, char ***env)
         if (access(command_path, F_OK) == 0)
             return command_path;
     }
-    return NULL;
+    return command;
 }
