@@ -39,4 +39,6 @@ void my_unsetenv(char **args, char ***env, int *status)
         return;
     }
     unsetenv_multiple_args(args, env, status);
+    reload_env(env);
+    return;
 }
