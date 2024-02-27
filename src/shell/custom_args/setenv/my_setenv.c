@@ -34,6 +34,8 @@ void my_setenv(char **args, char ***env, int *status)
         setenv_no_args(args, env, status);
         return;
     }
+    if (setenv_error_handling(args) == 1)
+        return;
     if (args[2] == NULL) {
         set_envonearg(args, env, new_var);
         return;
