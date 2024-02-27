@@ -67,4 +67,8 @@ vgcore.*
 .vscode/*
 a.out
 mysh
+tester.sh
+advanced
+tests
+README
 ```
