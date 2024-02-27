@@ -16,7 +16,7 @@ int shell_loop(char ***env, int *status)
 
     for (; status;) {
         if (isatty(0)) {
-            mini_printf("$> ");
+            mini_printf(BRED "Minishell@%s > " reset, getenv("USER"));
         }
         line = read_line();
         if (line == NULL) {

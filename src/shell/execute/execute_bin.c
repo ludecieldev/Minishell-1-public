@@ -14,9 +14,9 @@ static int cond_shorter(char **args, char ***env)
     args[0] = find_command(args[0], env);
     if (execve(args[0], args, *env) == -1) {
         mini_printf("%s: Command not found.\n", args[0]);
-        return 1;
+        exit(1);
     }
-    return 1;
+    return 0;
 }
 
 int execute_bin(char **args, char ***env)

@@ -10,6 +10,7 @@
 #ifndef B_PSU_200_LIL_2_1_MINISHELL1_ALEXANDRE_GARBE_MINISHELL_H
     #define B_PSU_200_LIL_2_1_MINISHELL1_ALEXANDRE_GARBE_MINISHELL_H
     #include "include.h"
+    #include "colors.h"
 //STRUCT
 typedef struct args_s {
     char *command;
