@@ -75,7 +75,8 @@ FILES_COMPILED = 0
 all: clear start_compilation $(NAME) end_compilation
 
 start_compilation:
-	@printf "${YELLOW}Lud's Makefile | ${CYAN}Started compilation of ${RED}$(TOTAL_FILES) files${NC}\n"
+	@printf "${YELLOW}Lud's Makefile | \
+${CYAN}Started compilation of ${RED}$(TOTAL_FILES) files${NC}\n"
 
 $(NAME): $(OBJ)
 	@gcc -o $(NAME) $(OBJ) $(CFLAGS) $(LDFLAGS)
@@ -89,7 +90,8 @@ $(NAME): $(OBJ)
 
 end_compilation:
 	@if [ $(FILES_COMPILED) -eq $(TOTAL_FILES) ]; then \
-		printf "${YELLOW}Lud's Makefile | ${BOLD_GREEN}All files compiled successfully!${NC}\n"; \
+		printf "${YELLOW}Lud's Makefile | ${BOLD_GREEN}All \
+files compiled successfully!${NC}\n"; \
 	else \
 		printf "${YELLOW}Lud's Makefile | No new changes to compile.${NC}\n"; \
 	fi
@@ -100,7 +102,8 @@ clean:
 
 fclean: clean
 	@rm -f $(NAME)
-	@printf "${YELLOW}Lud's Makefile | ${RED}Full cleanup complete. Executable removed.${NC}\n"
+	@printf "${YELLOW}Lud's Makefile | ${RED}Full cleanup complete.\
+ Executable removed.${NC}\n"
 
 re: fclean all
 
@@ -110,8 +113,10 @@ clear:
 help:
 	@echo "${BOLD_GREEN}Available targets:${NC}"
 	@echo "${BOLD_GREEN}  all: Builds the project.${NC}"
-	@echo "${BOLD_GREEN}  clean: Removes object files and dependency files.${NC}"
-	@echo "${BOLD_GREEN}  fclean: Removes object files, dependency files, and the executable.${NC}"
+	@echo "${BOLD_GREEN}  clean: Removes object \
+files and dependency files.${NC}"
+	@echo "${BOLD_GREEN}  fclean: Removes object files, dependency files, \
+and the executable.${NC}"
 	@echo "${BOLD_GREEN}  re: Rebuilds the project from scratch.${NC}"
 	@echo "${BOLD_GREEN}  help: Displays this help.${NC}"
 	@echo "${BOLD_GREEN}  clear: Clears the terminal.${NC}"
