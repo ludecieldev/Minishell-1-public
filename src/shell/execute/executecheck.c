@@ -16,7 +16,8 @@ int executecheck(char **args, char ***env, int *status)
             specialargs[i].func(args, env, status);
             return *status;
         }
-    if (args[0] == NULL)
+    if (args[0] == NULL || args[0][0] == '\0' ||
+    args[0][0] == ' ' || args[0][0] == '\t')
         return 0;
     *status = execute_bin(args, env);
     return *status;

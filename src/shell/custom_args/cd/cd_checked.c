@@ -11,7 +11,6 @@
 
 void check_cd(char **args, char ***env, int *status)
 {
-    reload_env(env);
     if (args[1] == NULL) {
         cd_no_args(args, env, status);
         return;

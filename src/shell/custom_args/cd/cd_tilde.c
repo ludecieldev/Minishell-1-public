@@ -11,5 +11,12 @@
 
 void cd_tilde(char **args, char ***env, int *status)
 {
-    cd_no_args(args, env, status);
+    char *home;
+
+    (void)args;
+    (void)status;
+    update_wd(env);
+    home = my_strcat("/home/", my_getenv("USER", env));
+    printf("home = %s\n", home);
+    chdir(home);
 }

@@ -12,9 +12,9 @@
 void cd_dash(char **args, char ***env, int *status)
 {
     char *oldpwd = my_getenv("OLDPWD", env);
-    char *pwd = my_getenv("PWD", env);
 
-    (void)args;
+    (void) args;
+    update_wd(env);
     if (oldpwd == NULL) {
         puterror("cd: No previous directory.\n");
         *status = 84;
@@ -26,6 +26,6 @@ void cd_dash(char **args, char ***env, int *status)
         *status = 84;
         return;
     }
-    set_pwd(env, oldpwd);
-    set_oldpwd(env, pwd);
+    mini_printf("%s\n", oldpwd);
+    free(oldpwd);
 }

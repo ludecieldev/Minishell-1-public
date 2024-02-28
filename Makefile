@@ -50,7 +50,9 @@ SRC	=	src/main/main.c	\
 		src/shell/custom_args/unsetenv/unsetenv_multiple_args.c	\
 		src/shell/custom_args/setenv/error_handling/arg_checker.c	\
 		src/shell/custom_args/setenv/error_handling/error_handling.c	\
-		src/shell/env/reload_env.c
+		src/shell/env/reload_env.c	\
+		src/shell/env/update_wd.c	\
+		src/shell/env/set_home.c
 
 OBJ     =   $(SRC:.c=.o)
 DEPS    =   $(OBJ:.o=.d)

@@ -63,6 +63,8 @@ void unsetenv_multiple_args(char **args, char ***env, int *status);
 int setenv_arg_checker(char **args);
 int setenv_error_handling(char **args);
 void reload_env(char ***env);
+void update_wd(char ***env);
+void set_home(char ***env);
 //TAB
 static const args_t specialargs[] = {
     {"cd", &check_cd},
