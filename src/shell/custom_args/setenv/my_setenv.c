@@ -34,15 +34,16 @@ void my_setenv(char **args, char ***env, int *status)
         setenv_no_args(args, env, status);
         return;
     }
-    if (setenv_error_handling(args) == 1)
+    if (setenv_error_handling(args, env, status) == 1)
         return;
     if (args[2] == NULL) {
         set_envonearg(args, env, new_var);
+        *status = 0;
         return;
     }
     if (args[3] != NULL) {
         puterror("setenv: Too many arguments.\n");
-        *status = 84;
+        *status = 1;
         return;
     }
     setenv_two_args(args, env, status);
