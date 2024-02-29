@@ -18,5 +18,11 @@ void cd_directory(char **args, char ***env, int *status)
         *status = 1;
         return;
     }
-    set_pwd(env, args[1]);
+    if (args[2] != NULL) {
+        puterror("cd: Too many arguments.\n");
+        *status = 1;
+        return;
+    }
+    update_wd(env);
+    *status = 0;
 }
