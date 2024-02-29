@@ -15,4 +15,5 @@ void setenv_no_args(char **args, char ***env, int *status)
     (void)args;
     for (int i = 0; (*env)[i] != NULL; i++)
         mini_printf("%s\n", (*env)[i]);
+    *status = 0;
 }
