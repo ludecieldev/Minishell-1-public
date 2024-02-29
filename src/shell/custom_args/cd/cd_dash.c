@@ -17,15 +17,16 @@ void cd_dash(char **args, char ***env, int *status)
     update_wd(env);
     if (oldpwd == NULL) {
         puterror("cd: No previous directory.\n");
-        *status = 84;
+        *status = 1;
         return;
     }
     if (chdir(oldpwd) == -1) {
         puterror(oldpwd);
         puterror(": No such file or directory.\n");
-        *status = 84;
+        *status = 1;
         return;
     }
     mini_printf("%s\n", oldpwd);
     free(oldpwd);
+    *status = 0;
 }
