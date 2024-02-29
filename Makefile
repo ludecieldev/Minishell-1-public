@@ -52,7 +52,8 @@ SRC	=	src/main/main.c	\
 		src/shell/custom_args/setenv/error_handling/error_handling.c	\
 		src/shell/env/reload_env.c	\
 		src/shell/env/update_wd.c	\
-		src/shell/env/set_home.c
+		src/shell/env/set_home.c	\
+		src/shell/custom_args/setenv/error_handling/is_newenv_allowed.c
 
 OBJ     =   $(SRC:.c=.o)
 DEPS    =   $(OBJ:.o=.d)

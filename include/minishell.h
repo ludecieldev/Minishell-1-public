@@ -61,10 +61,11 @@ void my_unsetenv(char **args, char ***env, int *status);
 void unsetenv_onearg(char **args, char ***env, int *status);
 void unsetenv_multiple_args(char **args, char ***env, int *status);
 int setenv_arg_checker(char **args);
-int setenv_error_handling(char **args);
+int setenv_error_handling(char **args, char ***env, int *status);
 void reload_env(char ***env);
 void update_wd(char ***env);
 void set_home(char ***env);
+int is_newenv_already_existing(char *newenv, char ***env, int *status);
 //TAB
 static const args_t specialargs[] = {
     {"cd", &check_cd},
