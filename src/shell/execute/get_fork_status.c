@@ -29,4 +29,3 @@ int get_fork_status(int status, char *path)
     }
     return 0;
 }
-
