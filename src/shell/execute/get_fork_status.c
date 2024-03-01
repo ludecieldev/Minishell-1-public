@@ -9,7 +9,7 @@
 
 #include "../../../include/minishell.h"
 
-int get_fork_status(int status)
+int get_fork_status(int status, char *path)
 {
     if (WIFEXITED(status))
         return WEXITSTATUS(status);
@@ -23,7 +23,7 @@ int get_fork_status(int status)
             return 136;
         }
         if (WTERMSIG(status) == SIGILL) {
-            mini_printf("Illegal instruction (possible wrong architecture error)\n");
+            mini_printf("%s: Exec format error. Wrong Architecture.\n", path);
             return 132;
         }
     }

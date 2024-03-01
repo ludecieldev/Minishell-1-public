@@ -44,6 +44,7 @@ int execute_bin(char **args, char ***env)
 {
     pid_t pid;
     int wstatus;
+    char *commad_path = find_command(args[0], env);
 
     pid = fork();
     if (pid == 0) {
@@ -55,6 +56,6 @@ int execute_bin(char **args, char ***env)
         return 0;
     } else {
         waitpid(pid, &wstatus, 0);
-        return get_fork_status(wstatus);
+        return get_fork_status(wstatus, commad_path);
     }
 }

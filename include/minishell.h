@@ -49,7 +49,7 @@ void setenv_two_args(char **args, char ***env, int *status);
 void cd_dash(char **args, char ***env, int *status, char *oldpwd);
 void env(char **args, char ***env, int *status);
 void my_exit(char **args, char ***env, int *status);
-int get_fork_status(int status);
+int get_fork_status(int status, char *path);
 void cd_directory(char **args, char ***env, int *status);
 void check_cd(char **args, char ***env, int *status);
 int execute_bin(char **args, char ***env);
