@@ -9,10 +9,8 @@
 
 #include "../../../../include/minishell.h"
 
-void cd_dash(char **args, char ***env, int *status)
+void cd_dash(char **args, char ***env, int *status, char *oldpwd)
 {
-    char *oldpwd = my_getenv("OLDPWD=", env);
-
     (void) args;
     update_wd(env);
     if (oldpwd == NULL) {
@@ -27,6 +25,5 @@ void cd_dash(char **args, char ***env, int *status)
         return;
     }
     mini_printf("%s\n", oldpwd);
-    free(oldpwd);
     *status = 0;
 }
