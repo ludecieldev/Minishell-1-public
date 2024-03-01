@@ -23,8 +23,8 @@ static int is_dir(char *path)
 static int cond_shorter(char **args, char ***env)
 {
     args[0] = find_command(args[0], env);
-    if (execve(args[0], args, *env) == -1) {
-        if (access(args[0], F_OK) == -1) {
+    if (access(args[0], F_OK) == -1) {
+        if (execve(args[0], args, *env) == -1) {
             puterror(args[0]);
             puterror(": Command not found.\n");
             return 1;
