@@ -13,14 +13,9 @@ void cd_tilde(char **args, char ***env, int *status)
 {
     char *home;
 
-    if (args[2] != NULL) {
-        puterror("cd: Too many arguments.\n");
-        *status = 1;
-        return;
-    }
     (void)args;
     (void)status;
-    home = my_getenv("HOME", env);
+    home = my_getenv("HOME=", env);
     update_wd(env);
     if (chdir(home) == -1) {
         puterror(home);
