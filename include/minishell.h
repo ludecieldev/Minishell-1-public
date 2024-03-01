@@ -46,7 +46,7 @@ int shell_loop(char ***env, int *status);
 void setenv_no_args(char **args, char ***env, int *status);
 void my_setenv(char **args, char ***env, int *status);
 void setenv_two_args(char **args, char ***env, int *status);
-void cd_dash(char **args, char ***env, int *status);
+void cd_dash(char **args, char ***env, int *status, char *oldpwd);
 void env(char **args, char ***env, int *status);
 void my_exit(char **args, char ***env, int *status);
 int get_fork_status(int status);
