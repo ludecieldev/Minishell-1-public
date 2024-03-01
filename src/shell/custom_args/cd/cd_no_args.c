@@ -16,8 +16,7 @@ void cd_no_args(char **args, char ***env, int *status)
     (void)args;
     (void)status;
     update_wd(env);
-    home = my_strcat("/home/", my_getenv("USER", env));
-    mini_printf("home = %s\n", home);
+    home = my_getenv("HOME=", env);
     if (chdir(home) == -1) {
         puterror(home);
         puterror(": No such file or directory.\n");

@@ -15,7 +15,7 @@ void set_home(char ***env)
     int i = 0;
 
     for (; (*env)[i] != NULL; i++) {
-        if (my_strncmp((*env)[i], "HOME=", 5) == 0) {
+        if (my_strncmp((*env)[i], "HOME", 4) == 0) {
             free((*env)[i]);
             (*env)[i] = my_strdup(home);
             free(home);

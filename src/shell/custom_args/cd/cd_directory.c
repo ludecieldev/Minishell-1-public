@@ -23,6 +23,5 @@ void cd_directory(char **args, char ***env, int *status)
         *status = 1;
         return;
     }
-    update_wd(env);
     *status = 0;
 }

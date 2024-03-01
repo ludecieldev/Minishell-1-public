@@ -20,9 +20,8 @@ void cd_tilde(char **args, char ***env, int *status)
     }
     (void)args;
     (void)status;
+    home = my_getenv("HOME", env);
     update_wd(env);
-    home = my_strcat("/home/", my_getenv("USER", env));
-    mini_printf("home = %s\n", home);
     if (chdir(home) == -1) {
         puterror(home);
         puterror(": No such file or directory.\n");

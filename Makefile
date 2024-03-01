@@ -60,7 +60,7 @@ DEPS    =   $(OBJ:.o=.d)
 
 NAME    =   mysh
 
-CFLAGS  +=  -W -Wall -Wextra -g3 -MMD -MP
+CFLAGS  +=  -W -Wall -Wextra -g3 -MMD -MP -I./include
 LDFLAGS +=
 
 CYAN    =   \033[0;36m

@@ -12,13 +12,10 @@
 void update_wd(char ***env)
 {
     char *pwd = getcwd(NULL, 0);
-    char *oldpwd = my_getenv("PWD", env);
-    char *home = my_getenv("HOME", env);
+    char *oldpwd = my_getenv("PWD=", env);
 
-    set_home(env);
     set_oldpwd(env, oldpwd);
     set_pwd(env, pwd);
     free(pwd);
     free(oldpwd);
-    free(home);
 }

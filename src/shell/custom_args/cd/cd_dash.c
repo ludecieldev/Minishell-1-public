@@ -11,7 +11,7 @@
 
 void cd_dash(char **args, char ***env, int *status)
 {
-    char *oldpwd = my_getenv("OLDPWD", env);
+    char *oldpwd = my_getenv("OLDPWD=", env);
 
     (void) args;
     update_wd(env);
