@@ -54,7 +54,7 @@ void cd_directory(char **args, char ***env, int *status);
 void check_cd(char **args, char ***env, int *status);
 int execute_bin(char **args, char ***env);
 int executecheck(char **args, char ***env, int *status);
-int get_fork_status(int status);
+int get_fork_status(int status, char *path);
 char *get_env_value(char *str);
 char *find_command(char *command, char ***env);
 void my_unsetenv(char **args, char ***env, int *status);

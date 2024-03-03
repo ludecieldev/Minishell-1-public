@@ -75,7 +75,7 @@ FILES_COMPILED = 0
 
 .SILENT:
 
-all: clear start_compilation $(NAME) end_compilation
+all: start_compilation $(NAME) end_compilation
 
 start_compilation:
 	@printf "${YELLOW}Lud's Makefile | \
@@ -110,9 +110,6 @@ fclean: clean
 
 re: fclean all
 
-clear:
-	@clear || cls
-
 help:
 	@echo "${BOLD_GREEN}Available targets:${NC}"
 	@echo "${BOLD_GREEN}  all: Builds the project.${NC}"
@@ -125,6 +122,6 @@ and the executable.${NC}"
 	@echo "${BOLD_GREEN}  clear: Clears the terminal.${NC}"
 
 
-.PHONY: all clean fclean re start_compilation end_compilation clear help
+.PHONY: all clean fclean re start_compilation end_compilation help
 
 -include $(DEPS)
